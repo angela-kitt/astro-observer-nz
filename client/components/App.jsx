@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import { getApod } from '../apiClient'
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-const style = { maxWidth: '500px' }
+import Header from './Header'
+import Home from './Home'
+import Apod from './Apod'
 
 const App = () => {
-  const [apod, setApod] = useState('')
-
-  useEffect(() => {
-    getApod()
-      .then((newApod) => setApod(newApod))
-      .catch((err) => {
-        console.error(err.message)
-      })
-  }, [])
-
   return (
     <>
-      <h1>Astronomy Kiwi Observer</h1>
-      <h3>Astronomy picture of the day: </h3>
       <div>
-        <img src={apod} alt={'Random astronomical'} style={style} />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/apod" element={<Apod />} />
+        </Routes>
       </div>
     </>
   )
