@@ -5,3 +5,10 @@ export function getApod() {
     return res.body
   })
 }
+
+export function getMoonPhase() {
+  return request.post('/api/v1/moonphase').then((res) => {
+    const data = res.body.data
+    return data.imageUrl
+  })
+}

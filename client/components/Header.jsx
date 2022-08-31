@@ -15,6 +15,10 @@ function Header() {
               {' '}
               <Link to="/apod">APOD</Link>
             </li>
+            <li>
+              {' '}
+              <Link to="/moonphase">Phase of the Moon</Link>
+            </li>
           </ul>
         </div>
       </div>
