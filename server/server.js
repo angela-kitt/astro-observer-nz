@@ -14,6 +14,7 @@ server.use(cors('*'))
 const hash = btoa(
   `${process.env.ASTRONOMY_API_APPLICATION_ID}:${process.env.ASTRONOMY_API_APPLICATION_SECRET}`
 )
+console.log(hash)
 
 server.get('/api/v1/apod', (req, res) => {
   return request
