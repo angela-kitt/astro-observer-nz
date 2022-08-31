@@ -1,34 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import { getGreeting } from '../apiClient'
+import { getApod } from '../apiClient'
+
+const style = { maxWidth: '500px' }
 
 const App = () => {
-  const [greeting, setGreeting] = useState('')
-  const [count, setCount] = useState(0)
-  const [isError, setIsError] = useState(false)
+  const [apod, setApod] = useState('')
 
   useEffect(() => {
-    getGreeting()
-      .then((greeting) => {
-        console.log(greeting)
-        setGreeting(greeting)
-        setIsError(false)
-      })
+    getApod()
+      .then((newApod) => setApod(newApod))
       .catch((err) => {
-        console.log(err)
-        setIsError(true)
+        console.error(err.message)
       })
-  }, [count])
+  }, [])
 
   return (
     <>
-      {count}
-      <h1>{greeting}</h1>
-      {isError && (
-        <p style={{ color: 'red' }}>
-          There was an error retrieving the greeting.
-        </p>
-      )}
-      <button onClick={() => setCount(count + 1)}>Click</button>
+      <h1>Astronomy Kiwi Observer</h1>
+      <h3>Astronomy picture of the day: </h3>
+      <div>
+        <img src={apod} alt={'Random astronomical'} style={style} />
+      </div>
     </>
   )
 }

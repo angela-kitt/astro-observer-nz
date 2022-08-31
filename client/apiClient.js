@@ -1,5 +1,7 @@
 import request from 'superagent'
 
-export function getGreeting() {
-  return request.get('/greeting').then((res) => res.body.greeting)
+export function getApod() {
+  return request.get('/api/v1/apod').then((res) => {
+    return res.body
+  })
 }
