@@ -3,6 +3,7 @@ const express = require('express')
 const request = require('superagent')
 const btoa = require('btoa')
 const cors = require('cors')
+const moment = require('moment-timezone')
 require('dotenv').config()
 
 const server = express()
@@ -14,6 +15,8 @@ server.use(cors('*'))
 const hash = btoa(
   `${process.env.ASTRONOMY_API_APPLICATION_ID}:${process.env.ASTRONOMY_API_APPLICATION_SECRET}`
 )
+
+const currentDate = moment().tz('Pacific/Auckland').format('YYYY-MM-DD')
 
 server.get('/api/v1/apod', (req, res) => {
   return request
@@ -43,7 +46,7 @@ server.post('/api/v1/moonphase', (req, res) => {
       observer: {
         latitude: -36.84846,
         longitude: 174.76333,
-        date: '2022-08-31',
+        date: `${currentDate}`,
       },
       view: {
         type: 'portrait-simple',

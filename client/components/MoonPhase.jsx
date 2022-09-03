@@ -18,7 +18,7 @@ const MoonPhase = () => {
     <>
       <h3>Current phase of the moon: </h3>
       <div>
-        <img src={moonPhase} alt={'Phase of the Moon'} style={style} />
+        <img src={moonPhase} alt={'Phases of the Moon'} style={style} />
       </div>
     </>
   )

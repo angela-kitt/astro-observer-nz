@@ -16,9 +16,9 @@ const Apod = () => {
   }, [])
   return (
     <>
-      <h3>Astronomy picture of the day hello: </h3>
+      <h3>Astronomy picture of the day: </h3>
       <div>
-        <img src={apod} alt={'Random astronomical'} style={style} />
+        <img src={apod} alt={'Random NASA photo'} style={style} />
       </div>
     </>
   )
