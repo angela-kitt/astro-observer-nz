@@ -5,6 +5,7 @@ import Header from './Header'
 import Home from './Home'
 import Apod from './Apod'
 import MoonPhase from './MoonPhase'
+import Weather from './Weather'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/apod" element={<Apod />} />
           <Route path="/moonphase" element={<MoonPhase />} />
+          <Route path="/weather" element={<Weather />} />
         </Routes>
       </div>
     </>

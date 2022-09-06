@@ -12,3 +12,11 @@ export function getMoonPhase() {
     return data.imageUrl
   })
 }
+
+export function getWeather() {
+  return request.get('/api/v1/weather').then((res) => {
+    const forecast = res.body.forecast
+    const day = forecast.forecastday
+    return day
+  })
+}

@@ -18,12 +18,28 @@ const hash = btoa(
 
 const currentDate = moment().tz('Pacific/Auckland').format('YYYY-MM-DD')
 
+const location = 'Auckland'
+
 server.get('/api/v1/apod', (req, res) => {
   return request
     .get('https://api.nasa.gov/planetary/apod')
     .set('x-api-key', process.env.SECRET_NASA_KEY)
     .then((response) => {
       res.json(response.body.url)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+})
+
+server.get('/api/v1/weather', (req, res) => {
+  return request
+    .get(
+      `https://api.weatherapi.com/v1/forecast.json?key=${process.env.SECRET_WEATHER_KEY}&q=${location}&days=3&aqi=no&alerts=no`
+    )
+    .set('key', process.env.SECRET_WEATHER_KEY)
+    .then((response) => {
+      res.json(response.body)
     })
     .catch(function (error) {
       console.log(error)
