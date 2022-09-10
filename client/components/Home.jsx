@@ -1,8 +1,11 @@
 import React from 'react'
-import Location from './Location'
 
 const Home = () => {
-  return <>{<Location />}</>
+  return (
+    <>
+      <p>Text body</p>
+    </>
+  )
 }
 
 export default Home

@@ -12,6 +12,7 @@ export default function Location() {
 
   function handleSubmit(event) {
     event.preventDefault()
+    location
     alert(`The location you entered was: ${location}`, setData(initialData))
   }
 

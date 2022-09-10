@@ -18,7 +18,13 @@ const hash = btoa(
 
 const currentDate = moment().tz('Pacific/Auckland').format('YYYY-MM-DD')
 
-const location = 'Auckland'
+let location = 'Auckland'
+
+function getLocation(data) {
+  const location1 = data.slice(1, 20)
+  console.log('Set location: ', location1)
+  return location1
+}
 
 server.get('/api/v1/apod', (req, res) => {
   return request
@@ -44,6 +50,11 @@ server.get('/api/v1/weather', (req, res) => {
     .catch(function (error) {
       console.log(error)
     })
+})
+
+server.post('/api/v1/weather/:location', (req, res) => {
+  const loc = req.params.location
+  return getLocation(loc)
 })
 
 server.post('/api/v1/moonphase', (req, res) => {

@@ -20,3 +20,14 @@ export function getWeather() {
     return day
   })
 }
+
+export function sendLocation(locationData) {
+  return request
+    .post(`/api/v1/weather/:${locationData}`)
+    .set('location', locationData)
+    .send('location', locationData)
+    .then((res) => {
+      const answer = res.body
+      console.log('Answer: ', answer)
+    })
+}

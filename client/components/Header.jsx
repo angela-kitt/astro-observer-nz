@@ -5,7 +5,9 @@ function Header() {
   return (
     <>
       <div className="header-container">
-        <h1>Astro Observer NZ</h1>
+        <h1>
+          <Link to="/">Astro Observer NZ</Link>
+        </h1>
         <div className="links">
           <ul>
             <li>

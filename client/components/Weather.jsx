@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import { getWeather } from '../apiClient'
+import { getWeather, sendLocation } from '../apiClient'
 
 const style = { maxWidth: '500px' }
+const initialData = { location: '' }
 
-const Weather = () => {
+export default function Weather() {
+  const [data, setData] = useState(initialData)
   const [weather, setWeather] = useState('')
+  const { location } = data
 
   useEffect(() => {
     getWeather()
@@ -14,6 +17,16 @@ const Weather = () => {
         console.error(err.message)
       })
   }, [])
+
+  function handleChange(event) {
+    setData({ ...data, [event.target.name]: event.target.value })
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    sendLocation(location)
+    alert(`The location you entered was: ${location}`, setData(initialData))
+  }
 
   const today = weather[0]
   const day = { today }
@@ -34,6 +47,18 @@ const Weather = () => {
 
   return (
     <>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="location">Enter your location: </label>
+        <p></p>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          value={location}
+          onChange={handleChange}
+        />
+        <input type="submit" />
+      </form>
       <h3>Weather today</h3>
       <div>High: {maxTemp} C</div>
       <div>Low: {minTemp} C</div>
@@ -44,5 +69,3 @@ const Weather = () => {
     </>
   )
 }
-
-export default Weather
