@@ -10,12 +10,10 @@ function Navigation() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            {' '}
             <Link to="/observations">Observations</Link>
           </li>
           <li>
-            {' '}
-            <Link to="/apod">APOD</Link>
+            <Link to="/links">Links</Link>
           </li>
         </ul>
       </div>

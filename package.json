@@ -43,6 +43,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.17.2",
+    "file-loader": "^6.2.0",
+    "fileloader": "^2.0.0",
     "jest": "^27.5.1",
     "moment-timezone": "^0.5.37",
     "react": "^17.0.2",

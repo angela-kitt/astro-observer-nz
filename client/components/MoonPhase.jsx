@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { getMoonPhase } from '../apiClient'
 
-const style = { maxWidth: '500px' }
+const style = { maxWidth: '180px' }
 
 const MoonPhase = () => {
   const [moonPhase, setMoonPhase] = useState('')

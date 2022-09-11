@@ -31,7 +31,7 @@ server.get('/api/v1/apod', (req, res) => {
     .get('https://api.nasa.gov/planetary/apod')
     .set('x-api-key', process.env.SECRET_NASA_KEY)
     .then((response) => {
-      res.json(response.body.url)
+      res.json(response.body)
     })
     .catch(function (error) {
       console.log(error)

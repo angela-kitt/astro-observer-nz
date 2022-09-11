@@ -1,4 +1,5 @@
 import React from 'react'
+import Apod from './Apod'
 import Observations from './Observations'
 
 const Centre = () => {
