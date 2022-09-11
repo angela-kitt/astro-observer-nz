@@ -8,25 +8,6 @@ function Header() {
         <h1>
           <Link to="/">Astro Observer NZ</Link>
         </h1>
-        <div className="links">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              {' '}
-              <Link to="/apod">APOD</Link>
-            </li>
-            <li>
-              {' '}
-              <Link to="/moonphase">Phase of the Moon</Link>
-            </li>
-            <li>
-              {' '}
-              <Link to="/weather">Weather</Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </>
   )

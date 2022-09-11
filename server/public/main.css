@@ -1,8 +1,56 @@
+* {
+  box-sizing: border-box; 
+}
+
 html,
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   padding: 0;
   margin: 0;
   background-color: black;
   color: antiquewhite;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.header-container {
+height: 10vh;
+flex-direction: column;
+text-align: center;
+justify-content: center;
+}
+
+.home-container {
+display: flex;
+flex: 1;
+}
+
+.home-container > .centre-container {
+  flex: 1;
+}
+
+.home-container > .navigation-container, .home-container > .aside-container {
+  flex: 0 0 20vw;
+  background: grey;
+}
+
+.home-container > .navigation-container {
+  order: -1;
+}
+
+.navigation-container {
+ padding: 1em;
+}
+
+.aside-container {
+  padding: 1em;
+}
+
+.apod {
+  padding: 1em;
+}
+
+.observations {
+  padding: 1em;
 }

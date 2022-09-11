@@ -47,6 +47,13 @@ export default function Weather() {
 
   return (
     <>
+      <h3>Weather today</h3>
+      <div>High: {maxTemp} C</div>
+      <div>Low: {minTemp} C</div>
+      <div>{forecastToday}</div>
+      <div>
+        <img src={imageLink} alt={'Current weather condition'} style={style} />
+      </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="location">Enter your location: </label>
         <p></p>
@@ -59,13 +66,6 @@ export default function Weather() {
         />
         <input type="submit" />
       </form>
-      <h3>Weather today</h3>
-      <div>High: {maxTemp} C</div>
-      <div>Low: {minTemp} C</div>
-      <div>{forecastToday}</div>
-      <div>
-        <img src={imageLink} alt={'Current weather condition'} style={style} />
-      </div>
     </>
   )
 }
