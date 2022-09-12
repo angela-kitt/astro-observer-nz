@@ -1,4 +1,4 @@
-import nock, { isDone } from 'nock'
+import nock from 'nock'
 import supertest from 'supertest'
 import request from 'supertest'
 
